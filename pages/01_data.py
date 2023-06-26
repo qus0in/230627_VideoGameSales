@@ -2,4 +2,5 @@ import streamlit as st
 import common
 
 st.title("Data")
-st.write(common.get_sales())
+st.dataframe(common.get_sales(),
+             use_container_with=True)
