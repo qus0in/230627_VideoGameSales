@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import common
 
-st.title("Bar Graph")
+st.title("Pie Chart 1")
 
 df = common.get_sales()
 
