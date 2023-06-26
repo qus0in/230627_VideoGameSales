@@ -18,7 +18,7 @@ with tab1:
     plt.xlabel('Year')
     plt.ylabel('Genre')
     plt.title('Global Sales by Year and Genre')
-    plt.show()
+    st.pyplot(plt)
 
 with tab2:
     fig = go.Figure(data=go.Heatmap(
