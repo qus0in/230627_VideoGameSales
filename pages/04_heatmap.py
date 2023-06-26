@@ -4,6 +4,8 @@ import seaborn as sns
 import plotly.graph_objects as go
 import common
 
+common.page_config()
+
 st.title("Heatmap")
 
 df = common.get_sales()

@@ -5,7 +5,7 @@ import common
 
 common.page_config()
 
-st.title("Bar Graph")
+st.title("Number of Video Games by Genre")
 
 df = common.get_sales()
 
