@@ -17,16 +17,8 @@ with tab1:
     st.pyplot(plt)
 
 with tab2:
-    pass
-    # fig = go.Figure(data=[go.Bar(x=genre_counts.index, y=genre_counts.values)])
-    # fig.update_layout(
-    #     xaxis=dict(
-    #         title='Genre',
-    #         tickangle=90,
-    #     ),
-    #     yaxis=dict(
-    #         title='Number of Games',
-    #     ),
-    #     title='Number of Video Games by Genre',
-    # )
-    # st.plotly_chart(fig)
+    fig = go.Figure(data=[go.Pie(labels=region_sales.index, values=region_sales.values, hole=0.3)])
+    fig.update_layout(
+        title='Distribution of Global Sales by Region',
+    )
+    st.plotly_chart(fig)
