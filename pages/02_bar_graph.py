@@ -18,12 +18,10 @@ with tab1:
     plt.ylabel('Number of Games')
     plt.title('Number of Video Games by Genre')
     plt.xticks(rotation=90)
-
     st.pyplot(plt)
 
 with tab2:
     fig = go.Figure(data=[go.Bar(x=genre_counts.index, y=genre_counts.values)])
-
     fig.update_layout(
         xaxis=dict(
             title='Genre',
@@ -34,5 +32,4 @@ with tab2:
         ),
         title='Number of Video Games by Genre',
     )
-
-    st.plolty_chart(fig)
+    st.plotly_chart(fig)

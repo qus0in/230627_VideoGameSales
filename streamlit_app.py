@@ -8,3 +8,4 @@ st.caption("""
 비디오 게임 시장 동향과 인기 게임을 분석할 수 있습니다.
 """)
 st.image("img/welcome.png")
+
