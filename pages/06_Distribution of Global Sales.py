@@ -6,7 +6,7 @@ import common
 
 common.page_config()
 
-st.title("Global Sales by Year and Genre")
+st.title("Distribution of Global Sales")
 
 df = common.get_sales()
 

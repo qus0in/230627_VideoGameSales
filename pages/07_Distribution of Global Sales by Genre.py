@@ -6,30 +6,23 @@ import common
 
 common.page_config()
 
-st.title("Global Sales by Year and Genre")
+st.title("Distribution of Global Sales by Genre")
 
 df = common.get_sales()
 
-
+genre_sales = df.groupby('Genre')['Global_Sales'].sum()
 
 tab1, tab2 = st.tabs(["Pyplot", "Plotly"])
 
 with tab1:
-    plt.boxplot(df['Global_Sales'], vert=False)
-    plt.xlabel('Global Sales (in millions)')
-    plt.title('Distribution of Global Sales')
+    plt.pie(genre_sales, labels=genre_sales.index, autopct='%1.1f%%')
+    plt.title('Distribution of Global Sales by Genre')
     st.pyplot(plt)
 
 with tab2:
-    fig = go.Figure(data=go.Box(
-        y=df['Global_Sales'],
-        boxpoints='all',
-        jitter=0.3,
-        pointpos=-1.8,
-    ))
+    fig = go.Figure(data=[go.Pie(labels=genre_sales.index, values=genre_sales.values, hole=0.3)])
     fig.update_layout(
-        xaxis=dict(title='Global Sales (in millions)'),
-        title='Distribution of Global Sales',
+        title='Distribution of Global Sales by Genre',
     )
     st.plotly_chart(fig,
                     use_container_width=True)
