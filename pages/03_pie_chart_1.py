@@ -21,4 +21,5 @@ with tab2:
     fig.update_layout(
         title='Distribution of Global Sales by Region',
     )
-    st.plotly_chart(fig)
+    st.plotly_chart(fig,
+                    use_container_width=True)

@@ -32,4 +32,5 @@ with tab2:
         xaxis=dict(title='Year'),
         yaxis=dict(title='Genre'),
     )
-    st.plotly_chart(fig)
+    st.plotly_chart(fig,
+                    use_container_width=True)
