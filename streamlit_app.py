@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Video Game Sales")
+st.header("Video Game Sales")
 st.caption("""
 "Video Game Sales" (비디오 게임 판매 데이터):
 이 데이터셋은 전 세계적으로 발매된 비디오 게임의 판매 정보를 담고 있습니다.
