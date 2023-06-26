@@ -21,9 +21,15 @@ with tab1:
     plt.show()
 
 with tab2:
-    pass
-    # fig = go.Figure(data=[go.Pie(labels=region_sales.index, values=region_sales.values, hole=0.3)])
-    # fig.update_layout(
-    #     title='Distribution of Global Sales by Region',
-    # )
-    # st.plotly_chart(fig)
+    fig = go.Figure(data=go.Heatmap(
+        z=sales_by_year_genre.values,
+        x=sales_by_year_genre.columns,
+        y=sales_by_year_genre.index,
+        colorscale='YlGnBu',
+    ))
+    fig.update_layout(
+        title='Global Sales by Year and Genre',
+        xaxis=dict(title='Year'),
+        yaxis=dict(title='Genre'),
+    )
+    st.plotly_chart(fig)
