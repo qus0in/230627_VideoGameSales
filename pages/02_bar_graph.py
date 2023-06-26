@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import streamlit as st
 import common
 
 st.title("Bar Graph")
