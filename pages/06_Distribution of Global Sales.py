@@ -21,7 +21,9 @@ with tab1:
 with tab2:
     fig = go.Figure(data=go.Box(
         y=df['Global_Sales'],
-        orientation='h',
+        boxpoints='all',
+        jitter=0.3,
+        pointpos=-1.8,
     ))
     fig.update_layout(
         xaxis=dict(title='Global Sales (in millions)'),
