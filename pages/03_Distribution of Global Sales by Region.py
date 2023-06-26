@@ -5,7 +5,7 @@ import common
 
 common.page_config()
 
-st.title("Pie Chart 1")
+st.title("Distribution of Global Sales by Region")
 
 df = common.get_sales()
 
