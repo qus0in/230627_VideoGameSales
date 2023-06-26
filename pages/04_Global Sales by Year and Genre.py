@@ -6,7 +6,7 @@ import common
 
 common.page_config()
 
-st.title("Heatmap")
+st.title("Global Sales by Year and Genre")
 
 df = common.get_sales()
 
