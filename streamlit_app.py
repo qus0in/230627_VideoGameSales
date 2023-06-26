@@ -1,5 +1,9 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="Video Game Sales",
+    page_icon="🎮",
+)
 st.title("Video Game Sales")
 st.caption("""
 "Video Game Sales" (비디오 게임 판매 데이터):
