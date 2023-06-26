@@ -1,24 +1,29 @@
-import matplotlib.pyplot as plt
 import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
 import plotly.graph_objects as go
 import common
 
-st.title("Pie Chart 1")
+st.title("Heatmap")
 
 df = common.get_sales()
 
-region_sales = df[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']].sum()
+sales_by_year_genre = df.pivot_table(index='Genre', columns='Year', values='Global_Sales', aggfunc='sum')
 
-tab1, tab2 = st.tabs(["Pyplot", "Plotly"])
+tab1, tab2 = st.tabs(["Seaborn", "Plotly"])
 
 with tab1:
-    plt.pie(region_sales, labels=region_sales.index, autopct='%1.1f%%')
-    plt.title('Distribution of Global Sales by Region')
-    st.pyplot(plt)
+    plt.figure(figsize=(12, 6))
+    sns.heatmap(sales_by_year_genre, cmap='YlGnBu')
+    plt.xlabel('Year')
+    plt.ylabel('Genre')
+    plt.title('Global Sales by Year and Genre')
+    plt.show()
 
 with tab2:
-    fig = go.Figure(data=[go.Pie(labels=region_sales.index, values=region_sales.values, hole=0.3)])
-    fig.update_layout(
-        title='Distribution of Global Sales by Region',
-    )
-    st.plotly_chart(fig)
+    pass
+    # fig = go.Figure(data=[go.Pie(labels=region_sales.index, values=region_sales.values, hole=0.3)])
+    # fig.update_layout(
+    #     title='Distribution of Global Sales by Region',
+    # )
+    # st.plotly_chart(fig)
